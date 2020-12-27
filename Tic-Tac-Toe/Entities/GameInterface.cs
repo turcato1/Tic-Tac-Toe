@@ -16,16 +16,16 @@ namespace Tic_Tac_Toe.Entities
         public void UpdateScreen()
         {
             Console.Clear();
-            for (int i = 0; i < 3; i++)
+            for (int y = 0; y < 3; y++)
             {
                 //Write the reference grid line number in most left side
-                Console.Write((3 - i).ToString() + " ");
+                Console.Write((3 - y).ToString() + " ");
                 //Print the TTT grid as in current game status
-                for (int j = 0; j < 3; j++)
+                for (int x = 0; x < 3; x++)
                 {
-                    string markInPosition = CurrentGame.GameGrid.Status[i,j];
+                    string markInPosition = CurrentGame.GameGrid.Status[x,y];
                     if (markInPosition == null) markInPosition = " ";
-                    if (j < 2)
+                    if (x < 2)
                     {
                         Console.Write(" " + markInPosition + " |");
                     }
@@ -35,7 +35,7 @@ namespace Tic_Tac_Toe.Entities
                     }
                 }
                 Console.WriteLine();
-                if (i < 2)
+                if (y < 2)
                 {
                     Console.WriteLine("  --- --- ---");
                 }
@@ -44,6 +44,9 @@ namespace Tic_Tac_Toe.Entities
                     Console.WriteLine("   a   b   c");
                 }
             }
+            Console.WriteLine();
+            Console.WriteLine("Player X (" + CurrentGame.PlayerX.Name + ") moves: [" + CurrentGame.PlayerX.MovesString() + "]");
+            Console.WriteLine("Player O (" + CurrentGame.PlayerO.Name + ") moves: [" + CurrentGame.PlayerO.MovesString() + "]");
             Console.WriteLine();
         }
 

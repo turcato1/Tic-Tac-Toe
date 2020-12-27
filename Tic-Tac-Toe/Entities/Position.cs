@@ -11,11 +11,11 @@ namespace Tic_Tac_Toe.Entities
 
         public Position(char charpositionX, int positionY)
         {
-            int tempXPosition =  charpositionX - 'a';
-            if (tempXPosition >= 0 && tempXPosition <= 2 && positionY > 0)
+            int tempXPosition = charpositionX - 'a';
+            if (tempXPosition >= 0 && tempXPosition <= 2 && positionY >= 1 && positionY <= 3)
             {
-                X = 3 - positionY;
-                Y = tempXPosition;
+                X = tempXPosition;
+                Y = 3 - positionY;
             }
             else
             {
@@ -25,7 +25,7 @@ namespace Tic_Tac_Toe.Entities
 
         public string ToStringGrid()
         {
-            return (X + 1).ToString() + (char.ConvertFromUtf32('a' + Y)).ToString();
+            return (3 - Y).ToString() + (char.ConvertFromUtf32(X + 'a')).ToString();
         }
     }
 }

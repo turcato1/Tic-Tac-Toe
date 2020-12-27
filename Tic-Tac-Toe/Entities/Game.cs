@@ -24,6 +24,14 @@
         public void NewMove(string mark, Position move)
         {
             GameGrid.PlaceInGrid(mark, move);
+            if (CurrentTurnMark == "X")
+            {
+                PlayerX.AddMove(move);
+            }
+            else
+            {
+                PlayerO.AddMove(move);
+            }
             CheckWinner();
             TurnNumber++;
             if (!HasFinished)

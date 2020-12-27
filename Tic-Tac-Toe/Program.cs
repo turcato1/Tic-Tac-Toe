@@ -47,7 +47,7 @@ namespace Tic_Tac_Toe
             Console.WriteLine("G A M E  O V E R !!");
             if (game.Winner == null)
             {
-                Console.WriteLine("There was no winner!!! Try again!");
+                Console.WriteLine("Draw! There was no winner!!! Try again!");
             }
             else
             {
